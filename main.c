@@ -2,27 +2,28 @@
 #include <stdlib.h>
 
 int main() {
-    int cell, row;
+    int column, row;
     FILE *html = fopen("table.html", "w");
     if(html == NULL)
     {
         printf("Error!");
         exit(1);
     }
-    printf("Number of cell: ");
-    scanf("%d",&cell);
-    printf("Number of row: ");
-    scanf("%d",&row);
-    fprintf(html, "<table border=\"1\">\n");
-    for(int i = 0; i < row; i++)
+    printf("Enter the number of rows: ");
+    scanf("%d", &row);
+    printf("Enter the number of columns: ");
+    scanf("%d", &column);
+    fprintf(html, "<html>\n<body>\n<table border=\"1\">\n");
+    for(int i = 0; i < column; i++)
     {
         fprintf(html, "<tr>\n");
-        for(int j = 0; j < cell; j++)
+        for(int j = 0; j < row; j++)
         {
-            fprintf(html, "<td>%d</td>\n", i*cell+j+1);
+            fprintf(html, "<td>%d</td>\n", i*row+j+1);
         }
         fprintf(html, "</tr>\n");
     }
-    fprintf(html, "</table>\n");
+    fprintf(html, "</table>\n</body>\n</html>");
     fclose(html);
+    return 0;
 }
