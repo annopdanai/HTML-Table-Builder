@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+char ch;
+
 int main() {
     int column, row;
     FILE *html = fopen("table.html", "w");
@@ -19,7 +21,10 @@ int main() {
         fprintf(html, "<tr>\n");
         for(int j = 0; j < row; j++)
         {
-            fprintf(html, "<td>%d</td>\n", i*row+j+1);
+            while ((ch = getchar()) != '\n' && ch != EOF);
+            printf("Enter the value of the cell %d%d: ", j + 1, i + 1);
+            scanf("%d", &ch);
+            fprintf(html, "<td>%d</td>\n", ch);
         }
         fprintf(html, "</tr>\n");
     }
