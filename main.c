@@ -19,7 +19,10 @@ int main() {
         fprintf(html, "<tr>\n");
         for(int j = 0; j < row; j++)
         {
-            fprintf(html, "<td>%d</td>\n", i*row+j+1);
+            char ch;
+            printf("Enter the value for cell %d: ", i*row+j+1);
+            scanf("%c", &ch);
+            fprintf(html, "<td>%c</td>\n", ch);
         }
         fprintf(html, "</tr>\n");
     }
