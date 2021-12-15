@@ -29,5 +29,7 @@ int main() {
     }
     fprintf(html, "</table>\n</center>\n</body>\n</html>");
     fclose(html);
+    printf("\nThe table is successfully created!\n");
+    printf("The table is saved in the file \"table.html\"\n");
     return 0;
 }
